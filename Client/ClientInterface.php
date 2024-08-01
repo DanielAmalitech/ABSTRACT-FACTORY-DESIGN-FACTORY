@@ -8,21 +8,7 @@ interface ClientInterface
     /**
      * @return void
      */
-    public function getFurnitureDesignSofa(): void;
+    public function getFurnitureDesign(): void;
 
-    /**
-     * @return void
-     */
-    public function getFurnitureDesignCoffeeTable(): void;
-
-    /**
-     * @return void
-     */
-    public function getFurnitureDesignChair(): void;
-
-    /**
-     * @return void
-     */
-    public function getFurnitureDesignKitchenTable(): void;
 
 }

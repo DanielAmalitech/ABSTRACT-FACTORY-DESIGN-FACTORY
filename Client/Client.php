@@ -23,7 +23,7 @@ class Client implements ClientInterface
      * @var FurnitureFactoryInterface
      */
     public FurnitureFactoryInterface $getFactory;
-    
+
     public function __construct(
         FurnitureFactoryInterface $furnitureFactory
     )
@@ -34,11 +34,11 @@ class Client implements ClientInterface
     /**
      * @inheritDoc
      */
-    public final function getFurnitureDesignSofa(): void
+    public final function getFurnitureDesign(): void
     {
+        // TODO: Implement getFurnitureDesign() method.
         $furnitureDesign = $this->getFactory->createSofa();
-        $this->getSpecification($furnitureDesign, 'white', 223.2, 12.2);
-
+        $this->getSpecification($furnitureDesign, 'Yellow', 23.2, 2.2);
     }
 
     private function getSpecification(mixed $furnitureDesign, string $color, float $width, float $height): void
@@ -54,41 +54,9 @@ class Client implements ClientInterface
 
     }
 
-    /**
-     * @inheritDoc
-     */
-    public final function getFurnitureDesignCoffeeTable(): void
-    {
-        $furnitureDesign = $this->getFactory->createCoffeeTable();
-        $this->getSpecification($furnitureDesign, 'Blue', 233.2, 12.2);
-
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public final function getFurnitureDesignChair(): void
-    {
-        $furnitureDesign = $this->getFactory->createChair();
-        $this->getSpecification($furnitureDesign, 'Yellow', 23.2, 2.2);
-
-        echo "\n";
-        echo $this->getFactory
-            ->createChair()
-            ->kitchenTableCollaborate(( new RetroKitchenTable()));
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public final function getFurnitureDesignKitchenTable(): void
-    {
-        // TODO: Implement getFurnitureDesignKitchenTable() method.
-        $furnitureDesign = $this->getFactory->createKitchenTable();
-        $this->getSpecification($furnitureDesign, 'Green', 23.2, 2.2);
-    }
 }
 
-(new Client(new ModernFurnitureFactory()))
-    ->getFurnitureDesignChair();
+(new Client(new RetroFurnitureFactory()))
+    ->getFurnitureDesign();
+
 
